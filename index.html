@@ -1,9 +1,32 @@
-<html>
+<html ng-app='sounder'>
 <head>
 	<title>SoundCloud Clone</title>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 	<link href='style.css' rel='stylesheet'>
 </head>
-<body>
+<body ng-controller='mainControl'>
+	
+	<input ng-model='searchText' placeholder='Enter a Username'></input>
+	<button ng-click='getUser()'>Search</button>
 
+	<div class='playa' ng-bind-html="player_html"></div>
+
+	<div class='row'>
+		<div ng-repeat='song in userData'>
+			<div class='col-md-1 col-sm-2 col-xs-3'>
+				<img class='artwork' ng-src='{{song.artwork_url}}' ng-click="play(song.permalink_url)" ng-if="song.artwork_url">
+			</div>
+		</div>
+	</div>
+
+
+	<script src="http://connect.soundcloud.com/sdk.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-route.js"></script>
+	<script src='js/app.js'></script>
+	<script src='js/mainControl.js'></script>
+	<script src='js/mainService.js'></script>
 </body>
 </html>

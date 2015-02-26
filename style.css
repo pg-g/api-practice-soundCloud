@@ -1,0 +1,29 @@
+input {
+	width: 100%;
+	border: none;
+	height: 40px;
+	font-size: 20px;
+	text-align: center;
+}
+
+button {
+	width: 100%;
+	background-color: #F39C12;
+	color: white;
+	font-size: 18px;
+	border: none;
+	/*margin-bottom: 10px;*/
+}
+button:hover {
+	background-color: #F5AB35;
+}
+
+img {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.playa {
+	background-color: #E67E22;
+	min-height: 100px;
+}
